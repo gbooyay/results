@@ -35,3 +35,27 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 ### Support or Contact
 
 Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+
+var filterManager = new FilterManager({
+    el:'#filters',
+    filterSettings: {
+        visibleFilters: ['parameter1', 'parameter2']
+    },
+});
+var graph = new graphly.graphly({
+    el: '#graph',
+    renderSettings: {
+        xAxis: 'parameter1',
+        yAxis: ['parameter2', 'parameter3'],
+        y2Axis: ['parameter4']
+    },
+    filterManager: filterManager
+});
+
+graph.loadData({
+    parameter1: [1, 2, 3, 4],
+    parameter2: [0.1, 0.2, 0.3, 0.4],
+    parameter3: [0.4, 0.3, 0.2, 0.1],
+    parameter4: [150, 100, 120, 130]
+});
+
